@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <script>
+        function validateForm() {
+            const name = document.forms["contactForm"]["name"].value;
+            const email = document.forms["contactForm"]["email"].value;
+            const message = document.forms["contactForm"]["message"].value;
+
+            if (name == "" || email == "" || message == "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            // Simple email validation
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+<h2>Contact Us</h2>
+<form name="contactForm" action="send_email.php" method="post" onsubmit="return validateForm()">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email"><br><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message"></textarea><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

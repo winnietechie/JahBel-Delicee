@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sliding Images</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style type="text/css">
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: pink;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.slider {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slides img {
+    min-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 500px; /* Set a maximum height for larger screens */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+    /* Optional: Add a border radius for aesthetics */
+    border-radius: 10px; 
+}
+
+/* Optional: Add media queries for better control on larger screens */
+@media (min-width: 768px) {
+    .slides img {
+        max-height: 600px; /* Increase max height for larger screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .slides img {
+        max-height: 700px; /* Further increase max height for very large screens */
+    }
+}
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Gallery</h1>
+
+        <div class="slider">
+            <div class="slides">
+                <img src="cassoulet.jpg" srcset="cassoulet-medium.jpg 768w, cassoulet.jpg1200w" alt="Image 1">
+                <img src="couscousaugras.jpeg" srcset="couscousaugras-medium.jpg 768w, couscousaugras.jpeg" alt="Image 2">
+                <img src="creme brullie.jpg" srcset="creme brullie-medium.jpg 768w, creme brullie.jpg 1200w" alt="Image 3">
+                <img src="croissant.jpeg" srcset="croissant-medium.jpg 768w,croissant.jpeg 1200w" alt="Image 2">
+                <img src="crepes suzette.jpg" srcset="crepes suzette.jpg 768w, crepes suzette.jpg 1200w" alt="Image 3">
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+const slides = document.querySelector('.slides');
+const totalSlides = slides.children.length;
+
+function showNextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    const offset = -currentIndex * 100; // Move left by 100% for each slide
+    slides.style.transform = `translateX(${offset}%)`;
+}
+
+// Change slide every 3 seconds
+setInterval(showNextSlide, 3000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Responsive Bouncing Rectangles</title>
+    <style type="text/css">
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    padding: 50px;
+    min-height: 100vh;
+}
+
+.rectangle {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: bounce 1s infinite alternate;
+}
+
+.text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.image {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 600px) {
+    .rectangle {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .image {
+        margin-top: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="rectangle">
+            <div class="text">
+                <h2>Title 1</h2>
+                <h2>Subtitle 1</h2>
+            </div>
+            <img src="image1.jpg" alt="Image 1" class="image">
+        </div>
+        <div class="rectangle">
+            <div class="text">
+                <h2>Title 2</h2>
+                <h2>Subtitle 2</h2>
+            </div>
+            <img src="image2.jpg" alt="Image 2" class="image">
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Responsive Bouncing Rectangles</title>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: grey;
+            padding: 50px;
+            min-height: 100vh;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+
+        .rectangle5 {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            width: 40%; /* Adjust width to allow for two rectangles */
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: bounce 1s infinite alternate;
+        }
+
+        .text5 {
+            flex: 1;
+            padding-right: 20px;
+            text-align: left; /* Align text to the left */
+        }
+
+        .image5{
+            width: 50px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .rectangle5 {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 90%; /* Full width on smaller screens */
+            }
+
+            .image5 {
+                margin-top: 10px;
+            }
+        }
+
+        /* Additional styles to make rectangles face each other */
+        .rectangle5:nth-child(1) {
+            margin-right: auto; /* Push the first rectangle to the left */
+        }
+
+        .rectangle5:nth-child(2) {
+            margin-left: auto; /* Push the second rectangle to the right */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="rectangle5">
+            <div class="text">
+                <h2>Title 1</h2>
+                <h2>Subtitle 1</h2>
+            </div>
+            <img src="image1.jpg" alt="Image 1" class="image">
+        </div>
+        <div class="rectangle">
+            <div class="text">
+                <h2>Title 2</h2>
+                <h2>Subtitle 2</h2>
+            </div>
+            <img src="image2.jpg" alt="Image 2" class="image">
+        </div>
+    </div>
+</body>
+</html>

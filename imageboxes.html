@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Responsive Div Example</title>
+    <style type="text/css">
+    
+.container {
+    background-color: purple;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 1500px; 
+    width: 100%;
+}
+
+.small-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.main-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.box {
+    background-color: #6a0dad;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    position: relative;
+}
+
+.circular-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -20px; /* Adjust this value to position the image */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h3 {
+    margin-top: 60px; /* Adjust this value to create space for the image */
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 0.9em;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="small-title">Small Title</h2>
+        <h1 class="main-title">Main Title</h1>
+        <div class="boxes">
+            <div class="box">
+                <img src="https://via.placeholder.com/100" alt="Image 1" class="circular-image">
+                <h3>Box Title 1</h3>
+                <p>Some text for box 1.</p>
+            </div>
+            <div class="box">
+                <img src="https://via.placeholder.com/100" alt="Image 2" class="circular-image">
+                <h3>Box Title 2</h3>
+                <p>Some text for box 2ssssssssss.</p>
+                <p>Some text for box 2ssssssssss.</p>
+            </div>
+            <div class="box">
+                <img src="https://via.placeholder.com/100" alt="Image 3" class="circular-image">
+                <h3>Box Title 3</h3>
+                <p>Some text for box 3.</p>
+            </div>
+            <div class="box">
+                <img src="https://via.placeholder.com/100" alt="Image 4" class="circular-image">
+                <h3>Box Title 4</h3>
+                <p>Some text for box 4.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

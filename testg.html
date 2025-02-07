@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+         :root {
+    --primary-color: #4CAF50;
+    --secondary-color: #ee7301;
+    --text-color: whitesmoke;
+    /* --background-color: #7c5858; */
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+}
+
+.navbar {
+    background: linear-gradient(to right, rgb(6, 31, 6), rgb(201, 75, 2), rgb(8, 43, 8),rgb(201, 75, 2),rgb(6, 43, 6));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 50px; 
+    width: auto; 
+    max-width: 100%; 
+    display: flex;
+    align-items: center;
+
+}
+.logo-img {
+    width: 150px;
+    height: auto; 
+    max-width: 100%; 
+    object-fit: contain; 
+    margin-right: 0.5rem;
+    border-radius: 30px;
+}
+
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
+    
+    color:whitesmoke;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--text-color);
+}
+
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 4rem;
+        flex-direction: column;
+        background: linear-gradient(to right, rgb(6, 31, 6), rgb(201, 75, 2), rgb(8, 43, 8),rgb(201, 75, 2),rgb(6, 43, 6));
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="logooo.jpg" alt="Logo" class="logo-img">
+                <span class="logo-text"></span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="Jah-home.html" class="nav-link">Home♟</a></li>
+                <li><a href="Jah-about.html" class="nav-link">About♟</a></li>
+                <li><a href="Jah-menu.html" class="nav-link">Menu♟</a></li>
+                <li><a href="Jah-signup.html" class="nav-link">SignUp♟</a></li>
+                <li><a href="Jah-login.html" class="nav-link">Login♟</a></li>
+                <li><a href="Jah-contact.html" class="nav-link">Contact Us♟</a></li>
+                <li><a href="Jah-blahhh.html" class="nav-link">Cart🛒</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+
+    mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when a nav link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+
+
+    </script>
+</body>
+</html>
+
+
+

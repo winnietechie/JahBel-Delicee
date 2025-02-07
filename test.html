@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Responsive Layout</title>
+    <style type="text/css">
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    background-color: green;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.left-area {
+    flex: 1;
+    min-width: 300px; /* Minimum width for responsiveness */
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+}
+
+.right-area {
+    flex: 1;
+    min-width: 300px; /* Minimum width for responsiveness */
+    padding-left: 20px;
+    color: white; /* Text color for contrast */
+}
+
+.responsive-h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: white;
+    color: green;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 5px; /* Space between buttons */
+    text-align: center;
+}
+
+.paragraphs {
+    margin-bottom: 20px;
+}
+
+.paragraphs p {
+    margin-bottom: 10px;
+}
+
+.divider {
+    border: 1px solid white;
+    margin: 20px 0;
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+}
+
+.discover-button {
+    background-color: white;
+    color: green;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Full width */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-area">
+            <img src="your-image-url.jpg" alt="Responsive Image" class="responsive-image">
+        </div>
+        <div class="right-area">
+            <h1 class="responsive-h1">Your Responsive Heading</h1>
+            <div class="button-container">
+                <div class="button">Button 1</div>
+                <div class="button">Button 2</div>
+            </div>
+            <div class="paragraphs">
+                <p>Paragraph 1: Restaurant advances and benefits.</p>
+                <p>Paragraph 2: Restaurant advances and benefits.</p>
+                <p>Paragraph 3: Restaurant advances and benefits.</p>
+                <p>Paragraph 4: Restaurant advances and benefits.</p>
+                <p>Paragraph 5: Restaurant advances and benefits.</p>
+                <p>Paragraph 6: Restaurant advances and benefits.</p>
+            </div>
+            <hr class="divider">
+            <div class="icon-text">
+                <img src="your-icon-url.png" alt="Icon" class="icon">
+                <div class="text">
+                    <p>Line 1 of text</p>
+                    <p>Line 2 of text</p>
+                </div>
+            </div>
+            <button class="discover-button">Discover More</button>
+        </div>
+    </div>
+</body>
+</html>
