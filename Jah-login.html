@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+     <!-- FONT INTERSESSION AREA📝 -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap" rel="stylesheet"> 
+ <!-- END OF FONT LINK -->
+   <!-- Font Awesome CDN -->
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=agriculture" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Doto:wght@100..900&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Gemunu+Libre:wght@200..800&family=Give+You+Glory&family=Hind+Siliguri:wght@300;400;500;600;700&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <title>SignUp♟</title>
+    <style type="text/css">
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arima', sans-serif;
+    background: linear-gradient(135deg, #4CAF50, #000);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(36, 190, 41, 0.5), rgba(0, 0, 0, 0.5));
+    animation: backgroundAnimation 9s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: rgba(38, 134, 41, 0.795);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.container {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+}
+
+.gif-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns the GIF to the top */
+    padding-top: 20px; /* Space above the GIF */
+    
+}
+
+.gif {
+    max-width: 100%;
+    height: auto;
+    animation: fadeIn 1s ease-in-out;
+    border-radius: 30px;
+    background-color: white;
+    
+}
+
+.signup-form {
+    flex: 1;
+    padding: 40px 20px; /* Increased padding for better spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-form h2 {
+    color: #FF5722; /* Orange color */
+    margin-bottom: 20px;
+    text-align: center;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #FF5722; /* Change border color on focus */
+}
+
+button {
+    padding: 10px;
+    background-color: #FF5722; /* Orange button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #e95528; /* Darker orange on hover */
+    transform: scale(1.08); 
+}
+
+button:active {
+    transform: scale(0.95); /* Slightly shrink button on click */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .gif-container {
+        width: 100%;
+        height: auto; /* Adjust height for mobile */
+    }
+
+    .signup-form {
+        padding: 20px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.back-link {
+    margin-top: 15px; 
+    text-align: center; 
+}
+
+.back-link a {
+    color: #FF5722; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: color 0.3s; 
+}
+
+.back-link a:hover {
+    color: #e64a19; 
+}
+
+
+  </style>
+<body>
+    
+    <div class="background-animation"></div>
+    <div class="container">
+        <div class="gif-container">
+            <img src="gauteasu.jpg" alt="Animated GIF" class="gif">
+        </div>
+        <form class="signup-form" action="https://submit-form.com/P78EUllf4">
+            <h2><b>Login!</b></h2>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password"></label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <div class="back-link">
+                <a href="Index.html">Back to Website></a> 
+            </div>
+        </form>
+    </div>
+    
+
+  </body>
+</html>

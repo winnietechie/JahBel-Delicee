@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+      <!-- FONT INTERSESSION AREA📝 -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap" rel="stylesheet"> 
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=agriculture" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Doto:wght@100..900&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Gemunu+Libre:wght@200..800&family=Give+You+Glory&family=Hind+Siliguri:wght@300;400;500;600;700&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+ <!-- END OF FONT LINK -->
+    <title>Menu♟</title>
+    <style type="text/css">
+
+        
+/* LOADER STYLING */
+@keyframes blinkCursor {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes typeAndDelete {
+  0%,
+  10% {
+    width: 0;
+  }
+  45%,
+  55% {
+    width: 6.2em;
+  } /* adjust width based on content */
+  90%,
+  100% {
+    width: 0;
+  }
+}
+/* END OF LOADER STYLING*/
+
+        :root {
+    --primary-color: #4CAF50;
+    --secondary-color: #ff6a07;
+    --text-color: whitesmoke;
+    --background-color: #e1f8e2; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Scrollbar Customization for Webkit Browsers */
+::-webkit-scrollbar {
+  width: 10px; /* Scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0fff0; /* Light greenish background */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #32cd32; /* Light green thumb */
+  border-radius: 5px;
+  border: 2px solid #f0fff0; /* Adds spacing between thumb and track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #228b22; /* Darker green on hover */
+}
+/* end of customized scrollbar */
+
+
+
+/* cursor's css */
+
+/* Base Styles */
+body {
+  cursor: none;
+  font-family: Arima, sans-serif;
+}
+
+/* Main Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  background: rgba(50, 205, 50, 0.8); /* Light green color */
+  border: 2px solid rgba(0, 128, 0, 0.7); /* Darker green border */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease, background-color 0.3s ease;
+}
+
+/* Cursor Trail Effect */
+.custom-trail {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(50, 205, 50, 0.5); /* Subtle green border */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease-out;
+}
+
+/* Hover Effect */
+body *:hover {
+  cursor: none;
+}
+
+body *:hover ~ .custom-cursor {
+  transform: scale(1.6); /* Enlarges cursor on hover */
+  background-color: rgba(34, 139, 34, 0.9); /* Darker green */
+}
+
+body *:hover ~ .custom-trail {
+  border-color: rgba(0, 128, 0, 0.7); /* Slightly darker trail border */
+}
+
+/* Click Effect */
+body:active .custom-cursor {
+  transform: scale(0.7); /* Slight shrink on click */
+  background-color: rgba(0, 128, 0, 0.9);
+}
+/* end of cursor styling */
+
+
+body {
+    font-family: 'Arima', sans-serif;  
+    background-color: var(--background-color);
+}
+.navbar {
+    background: linear-gradient(to right, rgb(6, 31, 6), rgb(201, 75, 2), rgb(8, 43, 8), rgb(201, 75, 2), rgb(6, 43, 6));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
+    color: whitesmoke;
+    text-decoration: overline double orangered;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #27ae60;
+   
+}
+
+@media screen and (max-width: 868px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 4rem;
+        flex-direction: column;
+        background: linear-gradient(to right, rgb(6, 31, 6), rgb(201, 75, 2), rgb(8, 43, 8), rgb(201, 75, 2), rgb(6, 43, 6));
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+/* end of navv */
+
+
+/* First Section */
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh; 
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.8s ease; 
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text {
+    position: absolute;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.text h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.text h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.text button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(69, 153, 101, 0.664);
+    color: black;
+    border-radius: 5px;
+}
+
+.text button:hover {
+    background-color: rgb(221, 89, 13);
+}
+/* END O SECTION 1 */
+
+
+/* seond section css */
+.second-section {
+            background-color: rgb(15, 41, 15);
+            padding: 1.5rem; /* Padding around the section */
+            display: flex; /* Use flexbox for alignment */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            min-height: 50vh; 
+        }
+       
+
+
+        /* Small title style */
+        .small-title {
+            font-size: 1.2rem; 
+            color: whitesmoke;
+            margin-bottom: 0.3rem; 
+        }
+
+        /* Main title style */
+        .main-title {
+            font-size: 2.4rem; /* Larger font size for the main title */
+            color:whitesmoke; /* Darker shade of purple */
+            text-align: center; /* Center the text */
+            margin-bottom: 1rem; /* Space below the main title */
+        }
+
+        .card-container {
+            display: flex; /* Use flexbox for card layout */
+            flex-wrap: wrap; /* Allow cards to wrap to the next line */
+            justify-content: center; /* Center cards horizontally */
+            gap: 1.5rem; /* Space between cards */
+        }
+
+        /* Card styles */
+        .card {
+            --bg-card: whitesmoke; 
+            --primary: #d97828;
+            --primary-800: #c7670d;
+            --primary-shadow: #f57c0b;
+            /* --light: rgb(4, 63, 4); */
+            --zinc-800: #18181b;
+            --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 1rem;
+            width: 17rem; /* Fixed width for cards */
+            background-color: var(--bg-card);
+            border-radius: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+            transition: transform 0.2s; /* Smooth scaling effect */
+        }
+
+        /* Scale effect on hover */
+        .card:hover {
+            transform: scale(1.08); /* Slightly enlarge the card on hover */
+        }
+
+        /* Image container styles */
+        .image_container {
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            height: 8rem; /* Fixed height for images */
+            background-color: var(--primary-800);
+            border-radius: 0.5rem;
+        }
+
+        /* Image styles */
+        .image_container .image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            object-fit: cover; 
+            transform: translate(-50%, -50%); 
+            width: 100%;
+            height: 100%;
+            fill: var(--light);
+        }
+
+        /* Title styles for cards */
+        .title {
+            color:#116613;
+            overflow: clip;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--light);
+            text-transform: capitalize;
+            text-wrap: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        /* Button styles */
+        .cart-button {
+            border: #d97828;
+            background-color: #f57c0b;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem;
+            width: 100%;
+            background-image: var(--bg-linear);
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--light);
+            text-wrap: nowrap;
+            border-radius: 0.5rem;
+            box-shadow: inset 0 0 0.25rem 1px var(--light);
+        }
+        /* End of section 2 */
+
+/*begining of list  */
+        .menu-section {
+    background-color: #0c2e0c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows responsiveness */
+}
+
+.menu-category {
+    background-color: #388E3C; /* Darker green for contrast */
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+    min-width: 250px; /* Minimum width for responsiveness */
+}
+
+.category-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.food-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.food-list li {
+    margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+    .menu-title {
+        font-size: 1.5em;
+    }
+
+    .category-title {
+        font-size: 1.2em;
+    }
+}
+/* end of listt */
+        
+
+/* FOOTERRR */
+/* Footer */
+.footer {
+    background-color: #287c20;
+    color: #fff;
+    padding: 80px 0 40px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.footer-brand h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.footer h4 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #FFA500;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.footer-contact p {
+    margin-bottom: 15px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: #FFA500;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .farmers-grid {
+        gap: 20px;
+    }
+
+    .farmer-image-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .farmers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .newsletter-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-text {
+        margin-bottom: 20px;
+    }
+
+    .newsletter-form {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .farmers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand, .footer-links, .footer-contact, .footer-gallery {
+        text-align: center;
+    }
+    .footer-brand{
+        margin: auto;
+        width: 100%;
+    }
+    .footer h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-contact p {
+        justify-content: center;
+    }
+
+    .gallery-grid {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .farmers-section h2 {
+        font-size: 2rem;
+    }
+
+    .newsletter-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.organic-wrapper{
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-image: url(HFDHFHF.png);
+    background-size: cover;
+    background-position: center;
+}
+  
+  
+  
+  /* Content Box */
+  .organic-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Heading Styles */
+  .organic-heading {
+    font-size: 1.8rem; /* Slightly smaller */
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .organic-subheading {
+    font-size: 1.2rem; /* Smaller text */
+    margin: 0;
+  }
+  
+  /* Play Button */
+  .play-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Smaller play button */
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    animation: pulse 1.8s infinite;
+    position: relative;
+  }
+  
+  .play-icon {
+    width: 0;
+    height: 0;
+    border-left: 10px solid #27ae60;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+  }
+  
+  /* Play Button Animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+      transform: s;
+    }
+  }
+        /* end of footer syling */
+
+
+
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <div class="custom-trail"></div>
+     <!-- NAVBAR -->
+     <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="logooo.jpg" alt="Logo" class="logo-img">
+                <span class="logo-text"></span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="javascript:void(0);" onclick="navigateTo('Index.html')" class="nav-link">Home♟</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('Jah-aboutus.html')"class="nav-link">About♟</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('Jah-menu.html')"class="nav-link">Menu♟</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('Jah-signup.html')"class="nav-link">SignUp♟</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('Jah-login.html')"class="nav-link">Login♟</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('Jah-contact.html')"class="nav-link">Contact us♟</a></li>
+                <!-- <li><a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a></li> -->
+           
+            
+            </ul>
+        </div>
+    </nav>
+    <!-- NAVBARS SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+
+    mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when a nav link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+
+
+</script>
+<!-- END OF THE NAVBAR SECTION -->
+
+    <!-- First Section -->
+    <div class="slider">
+        <div class="slide">
+            <img src="aesth1.jpg" alt="Image 1">
+            <div class="text">
+                <h1>Mega Recipes Right At Your DoorSteps</h1>
+                <h2>~Not just recipes!</h2>
+                <button>Know Us More</button>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="aesth2.jpg" alt="Image 2">
+            <div class="text">
+                <h1>Freedom to be an  Oliver Twist</h1>
+                <h2>~Zero worries for you</h2>
+                <button>Know Us More</button>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="aesth3.jpg" alt="Image 3">
+            <div class="text">
+                <h1>We've Got the Vegees Covered Too</h1>
+                <h2>~Oubliee toi, Jamais!!</h2>
+                <button>Know Us More</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? '1' : '0';
+    });
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
+
+setInterval(nextSlide, 3000); // Change slide every 3 seconds
+showSlide(currentIndex);
+    </script>
+
+
+
+
+<!-- Second Section -->
+<div class="second-section">
+    <!-- Small Title -->
+    <div class="small-title">Vous êtes-vous déjà demandé quel goût avait la magie?</div>
+    
+    <!-- Main Title -->
+    <h2 class="main-title"style=" text-decoration:overline solid rgb(35, 187, 35);">~M..EN..U~</h2>
+    
+    <!-- Card Container -->
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="ratatoulle.jpg" class="image" alt="Pain au Chocolat">
+            </div>
+            <div class="title">
+                <span>Ratatoulle(mishmash)</span><br>
+                <span>Avec Mashedpotatoes,pasta/rice</span><br>
+                <span>📌₦12,900</span><br>
+            </div>
+            <button class="cart-button">
+                <span>Add to cart</span>
+            </button>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="couscousaugrass.jpeg" class="image" alt="Croissant">
+            </div>
+            <div class="title">
+                <span>Couscous Au Grass</span><br>
+                <span>Couscous Jollof avev;Poulet, poisson....</span><br>
+                <span>📌₦11,500</span><br>
+            </div>
+            <button class="cart-button">
+                <span>Add To Cart</span>
+            </button>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="Ayimolou Togolais.jpeg" class="image" alt="Macaron">
+            </div>
+            <div class="title">
+                <span>Ayimolou Togolais</span><br>
+                <span>With crispy fried fish&spicy sauce. </span><br>
+                <span>📌₦12,900</span><br>
+            </div>
+            <button class="cart-button">
+                <span>Add To Cart</span>
+            </button>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="givenimage1.jpg" class="image" alt="Fruit Tart">
+            </div>
+            <div class="title">
+                <span>Rice Combos</span><br>
+                <span>Gaining all alls one meal</span><br>
+                <span>📌₦12,900</span><br>
+            </div>
+            <button class="cart-button">
+                <span>Add To Cart</span>
+            </button>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="givenimage2.jpg" class="image" alt="Brownie">
+            </div>
+            <div class="title">
+                <span>ChickenPeariz</span><br>
+                <span>Not just any rice!</span><br>
+                <span>📌₦15,900</span><br>
+            </div>
+            <button class="cart-button">
+                <span>Add To Cart</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- end of my second section -->
+
+
+<!-- Second Section -->
+<div class="second-section">
+    <!-- Card Container -->
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="givenimage5.jpg" class="image" alt="Pain au Chocolat">
+            </div>
+            <div class="title">
+                <span>MeatGarn</span><br>
+                <span>Invisible but tastable stew</span><br>
+                <span>📌₦20,900</span><br>
+            </div>
+            <button class="cart-button">
+                <span>Add to cart</span>
+            </button>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="givenimage6.jpg" class="image" alt="Croissant">
+            </div>
+            <div class="title">
+                <span>Poisson Majored</span><br>
+                <span>Same size, same quality</span><br>
+                <span>📌₦15,500</span><br>
+            </div>
+            <button class="cart-button">
+                <span>Add To Cart</span>
+            </button>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="givenimage7.jpg" class="image" alt="Macaron">
+            </div>
+            <div class="title">
+                <span>Fresh all in one</span><br>
+                <span>leaving you a healthy after taste</span><br>
+                <span>📌₦10,500</span><br>
+            
+            </div>
+            <button class="cart-button">
+                <span>Add To Cart</span>
+            </button>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="givenimage8.jpg" class="image" alt="Fruit Tart">
+            </div>
+            <div class="title">
+                <span>Energy Givers</span><br>
+                <span>Served however you imagine it!</span><br>
+                <span>📌₦15,500</span><br>
+               
+            </div>
+            <button class="cart-button">
+                <span>Add To Cart</span>
+            </button>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="trad.jpg" class="image" alt="Brownie">
+            </div>
+            <div class="title">
+                <span>Inter cont. Delicacies</span><br>
+                <span>Letting your tastebuds travel!</span><br>
+                <span>📌₦15,500</span><br>
+            </div>
+            <button class="cart-button">
+                <span>Add To Cart</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- end of my second section -->
+
+
+<!-- Second Section -->
+<div class="second-section">
+   
+    
+    <!-- Card Container -->
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="health1.jpg" class="image" alt="Pain au Chocolat">
+            </div>
+            <div class="title">
+                <span>Fries🤩</span><br>
+                <span>Tinglish feelings in each bite</span><br>
+                <span>📌₦12,900</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="health5.jpg" class="image" alt="Croissant">
+            </div>
+            <div class="title">
+                <span>Salads </span><br>
+                <span>More than just boring vegetable</span><br>
+                <span>📌₦11,500</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="parff.jpeg" class="image" alt="Macaron">
+            </div>
+            <div class="title">
+                <span>Parfait as lunch?</span><br>
+                <span>Available in full or appetizers </span><br>
+                <span>📌₦11,500</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="potato balls.jpeg" class="image" alt="Fruit Tart">
+            </div>
+            <div class="title">
+                <span>Potato Balls</span><br>
+                <span>Choose your gauge</span><br>
+                <span>📌₦7,500</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="dish2.jpg" class="image" alt="Brownie">
+            </div>
+            <div class="title">
+                <span>Soups</span><br>
+                <span>Never Unavailable for your sake</span><br>
+                <span>📌₦7,500</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- end of my second section -->
+
+
+
+<!-- Dessert! -->
+ <!-- Second Section -->
+<div class="second-section">
+    
+    <!-- Main Title -->
+    <h2 class="main-title"style=" text-decoration:overline solid rgb(35, 187, 35);">◐Desserts🥨◐</h2>
+    
+    <!-- Card Container -->
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="pain au chocolat.jpg" class="image" alt="Pain au Chocolat">
+            </div>
+            <div class="title">
+                <span>Pain au chocolate🍫</span><br>
+                <span>You cant stop at one bite</span><br>
+                <span>📌₦3,000</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="aesth2.jpg" class="image" alt="Croissant">
+            </div>
+            <div class="title">
+                <span>Lil matin munch</span><br>
+                <span>Day starters</span><br>
+                <span>📌₦5,500</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="biscuit au chocolat.jpeg" class="image" alt="Macaron">
+            </div>
+            <div class="title">
+                <span>Biscuit au chocolat</span><br>
+                <span>Avec degue/milkshake(optional)</span><br>
+                <span>📌₦5,500</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="croissant.jpeg" class="image" alt="Fruit Tart">
+            </div>
+            <div class="title">
+                <span>Croissant</span><br>
+                <span> soft and succulent goodness</span><br>
+                <span>📌₦8,900</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="Degue.jpeg" class="image" alt="Brownie">
+            </div>
+            <div class="title">
+                <span>Degue</span><br>
+                <span> Satisfy Your Every Craving.</span><br>
+                <span>📌₦8,900</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+                
+            </button>
+        </div>
+    </div>
+</div>
+<!-- end of my second section -->
+
+
+
+
+<div class="second-section">
+    
+    <!-- Vegees section-->
+    <h2 class="main-title"style=" text-decoration:overline solid rgb(35, 187, 35);">◐Vegees Board🥦◐</h2>
+    
+    <!-- Card Container -->
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="classic piperade.jpg" class="image" alt="Pain au Chocolat">
+            </div>
+            <div class="title">
+                <span>Classic Piperade🍅</span><br>
+                <span> Satisfy Your Every Craving.</span><br>
+                <span>📌₦8,900</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="Vegan B.jpg" class="image" alt="Croissant">
+            </div>
+            <div class="title">
+                <span>Vegan Bourguinion🥕</span><br>
+                <span>Unleash Your Taste Buds.</span><br>
+                <span>📌₦3,200</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="fruitsalad.jpg" class="image" alt="Macaron">
+            </div>
+            <div class="title">
+                <span>Quenelles🥘</span><br>
+                <span>We make Quenelles Become Art </span><br>
+                <span>📌₦3,500</span>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="Berry casserole.jpg" class="image" alt="Fruit Tart">
+            </div>
+            <div class="title">
+                <span>Mixed berry casserole🍇</span><br>
+                <span>A Witty Twist on Deliciousness</span><br>
+                <span>📌₦4,950</span>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="aligot.jpg" class="image" alt="Brownie">
+            </div>
+            <div class="title">
+                <span>Aligot</span><br>
+                <span>A Little Quirk with Your Cravings</span><br>
+                <span>📌₦6,500</span>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- end of my second section -->
+
+
+<!-- Second VEGEES SECTION -->
+<div class="second-section">  
+    <!-- Card Container -->
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="cheese souffle.jpg" class="image" >
+            </div>
+            <div class="title">
+                <span>Chesse Souffle🧀</span><br>
+                <span>Foodgasmic Flavors Guaranteed</span><br>
+                <span>📌₦3,000</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="eggplant lasna.jpg" class="image" alt="Croissant">
+            </div>
+            <div class="title">
+                <span>Eggplant Lasgna🍆</span><br>
+                <span>Eat Now, Diet Later(Or Never)</span><br>
+                <span>📌₦8,000</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="confit byaldi.jpg" class="image" alt="Macaron">
+            </div>
+            <div class="title">
+                <span>Confit Byaldi🍤</span><br>
+                <span>Finger-Lickin' Goodness</span><br>
+                <span>📌₦10,000</span>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="quenelles.jpg" class="image" alt="Fruit Tart">
+            </div>
+            <div class="title">
+                <span>Quenelles🥘</span><br>
+                <span>C'est délicieux!!😋</span><br>
+                <span>📌₦4,900</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="aesth7.jpg" class="image" alt="Brownie">
+            </div>
+            <div class="title">
+                <span>Avac'o'shrimp </span><br>
+                <span>Vegge et protein combo</span><br>
+                <span>📌₦7,900</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- END OF VEGEES SECTION -->
+
+
+
+<!-- DRINKS -->
+<div class="second-section">
+    
+    <!-- Main Title -->
+    <h2 class="main-title" style=" text-decoration:overline solid rgb(35, 187, 35);">◐Boissons🍹◐</h2>
+    
+    <!-- Card Container -->
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="mimosa deux.jpg" class="image" alt="Pain au Chocolat">
+            </div>
+            <div class="title">
+                <span>Mimosa spalsh</span><br>
+                <span>With specials for Vegetarians!</span><br>
+                <span>📌₦5,000</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="kir deux.jpg" class="image" alt="Croissant">
+            </div>
+            <div class="title">
+                <span>Kir</span><br>
+                <span>Assorted cocktail flavours</span><br>
+                <span>📌₦7,500</span><br>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="pastis.jpg" class="image" alt="Macaron">
+            </div>
+            <div class="title">
+                <span>Pastis ou Pastaga🍾</span><br>
+                <span>In various sizes to choose from</span><br>
+                <span>📌₦9,700</span>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="smoothies.jpg" class="image" alt="Fruit Tart">
+            </div>
+            <div class="title">
+                <span>Smoothies🍇</span><br>
+                <span>Blend your way to bliss.</span><br>
+                <span>📌₦4,000</span>
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="image_container">
+                <img src="diabolo.jpg" class="image" alt="Brownie">
+            </div>
+            <div class="title">
+                <span>Diabolo🍷</span><br>
+                <span>Zero Calories, Infinite Laughter</span><br>
+                <span>📌₦7,000</span>
+                
+            </div>
+            <button class="cart-button">
+                <span>~JahBel🍅~</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- END OF DRINK SECTION -->
+
+ <!--  -->
+ <div class="menu-section">
+    <h2 class="menu-title" style="text-decoration: underline;">◐Menu List◐</h2>
+    <div class="menu-container">
+        <div class="menu-category">
+            <h3 class="category-title">Appetizers</h3>
+            <ul class="food-list">
+                <li>Bruschetta---₦3,200</li>
+                <li>Stuffed Mushrooms---₦3,200</li>
+                <li>Garlic Bread---₦3,200</li>
+                <li>Caprese Salad---₦3,200</li>
+                <li>Spring Rolls---₦3,200</li>
+                <li>Chicken Wings---₦3,200</li>
+                <li>Nachos---₦3,200</li>
+                <li>Cheese Platter---₦3,200</li>
+            </ul>
+        </div>
+        <div class="menu-category">
+            <h3 class="category-title">Main Courses</h3>
+            <ul class="food-list">
+                <li>Grilled Salmon---₦3,200</li>
+                <li>Steak Frites---₦3,200</li>
+                <li>Pasta Primavera---₦3,200</li>
+                <li>Chicken Alfredo---₦3,200</li>
+                <li>Vegetable Stir Fry---₦3,200</li>
+                <li>Beef Tacos---₦3,200</li>
+                <li>Margherita Pizza---₦3,200</li>
+                <li>Quinoa Salad---₦3,200</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--  -->
+
+
+<!-- Footer section -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logooo.jpg" alt="Ogenix Logo" class="footer-logo">
+                <p>We're Providing Everyday Fresh and Quality Products</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#">♟About Company</a></li>
+                    <li><a href="Jah-signup.html">♟forms</a></li>
+                    <li><a href="Jah-login.html">♟Login</a></li>
+                    <li><a href="Jah-menu.html">♟</a>Food Gallery</li>
+                    <li><a href="Jah-contact.html">♟Get in touch</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p style="color:white"><i class="fas fa-map-marker-alt"></i> Valentin, Street Road 24, New York, USA - 67452</p>
+                <p style="color:white"><i class="fas fa-phone-alt"></i>07054375533</p>
+                <p style="color:white"><i class="fas fa-phone-alt"></i>08088543549</p>
+                <p style="color:white"><i class="fas fa-envelope"></i> jahbel@email.com</p>
+            </div>
+
+            <div class="footer-gallery">
+                <h4>Gallery</h4>
+                <div class="gallery-grid">
+                    <img src="aesth1.jpg" alt="Fresh vegetables">
+                    <img src="aesth10.jpg" alt="Fresh fruits">
+                    <img src="aesth11.jpg" alt="Bread">
+                    <img src="aesth12.jpg" alt="Healthy breakfast">
+                    <img src="aesth13.jpg" alt="Prepared meal">
+                    <img src="aesth2.jpg" alt="Organic food">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end o footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+<!-- CURSOR SCRIPTING -->
+<script>
+    const cursor = document.querySelector(".custom-cursor");
+    const trail = document.querySelector(".custom-trail");
+    
+    document.addEventListener("mousemove", (e) => {
+      // Updates cursor position
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    
+      // Updates trail position with a slight delay for a smooth trailing effect
+      setTimeout(() => {
+        trail.style.left = `${e.clientX}px`;
+        trail.style.top = `${e.clientY}px`;
+      }, 90);
+    });
+    </script>

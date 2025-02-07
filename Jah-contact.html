@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+     <!-- Font Awesome CDN -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=agriculture" />
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Doto:wght@100..900&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Gemunu+Libre:wght@200..800&family=Give+You+Glory&family=Hind+Siliguri:wght@300;400;500;600;700&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- FONT INTERSESSION AREA📝 -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap" rel="stylesheet"> 
+  
+ <!-- END OF FONT LINK -->
+    <title>contact♟</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style type="text/css">
+
+        
+/* LOADER STYLING */
+@keyframes blinkCursor {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes typeAndDelete {
+  0%,
+  10% {
+    width: 0;
+  }
+  45%,
+  55% {
+    width: 6.2em;
+  } /* adjust width based on content */
+  90%,
+  100% {
+    width: 0;
+  }
+}
+/* END OF LOADER STYLING*/
+
+         :root {
+    --primary-color: #0e3306;
+    --secondary-color: #ff6a07;
+    --text-color: whitesmoke;
+    --background-color: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* SCROLLBAR CUSTOMIZATION FOR WEBKIT BROWSERS */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0fff0; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #32cd32; 
+  border-radius: 5px;
+  border: 2px solid #f0fff0; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #228b22; 
+}
+/* END OF THE CUSTOMIZED SCROLLBAR */
+
+
+
+/* CURSOR STYLING */
+/* BASE STYLES */
+body {
+  cursor: none; /*HIDES THE DEFAULT CURSOR */
+}
+
+/* MAIN CURSOR */
+.custom-cursor {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  background: rgba(50, 205, 50, 0.8); 
+  border: 2px solid rgba(0, 128, 0, 0.7); 
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease, background-color 0.3s ease;
+}
+
+/* CURSOR TRAIL EFFECT */
+.custom-trail {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(50, 205, 50, 0.5); 
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease-out;
+}
+
+/* HOVER EFFECT */
+body *:hover {
+  cursor: none;
+}
+
+body *:hover ~ .custom-cursor {
+  transform: scale(1.6); 
+  background-color: rgba(34, 139, 34, 0.9); 
+}
+
+body *:hover ~ .custom-trail {
+  border-color: rgba(0, 128, 0, 0.7); /
+}
+
+/* CLICK EFFECT */
+body:active .custom-cursor {
+  transform: scale(0.7); 
+  background-color: rgba(0, 128, 0, 0.9);
+}
+/* END OF CURSOR STYLING */
+
+
+body {
+    font-family: 'Arima', sans-serif;  
+    background-color: var(--background-color);
+}
+.navbar {
+    background: linear-gradient(to right, rgb(6, 31, 6), rgb(201, 75, 2), rgb(8, 43, 8), rgb(201, 75, 2), rgb(6, 43, 6));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
+    color: whitesmoke;
+    text-decoration: overline double orangered;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #27ae60;
+    /* background-color: var(--text-color); */
+}
+
+@media screen and (max-width: 868px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 4rem;
+        flex-direction: column;
+        background: linear-gradient(to right, rgb(6, 31, 6), rgb(201, 75, 2), rgb(8, 43, 8), rgb(201, 75, 2), rgb(6, 43, 6));
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* FIRST SECTION */
+.contact-section {
+    background-image: url('contactbg2.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    height: 75vh; /* Full viewport height */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text */
+    color: white; /* Text color */
+}
+
+.contact-title {
+    font-size: 3.5rem; /* Base font size */
+    font-weight: bolder; /* Bold text */
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.7); /* Optional shadow for better readability */
+}
+
+/* Responsive font size */
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 2.5rem; /* Smaller font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-title {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+}
+
+/* MAIN AREA SYTYLING */
+body {
+    background-color: #0e3306; 
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.left, .right {
+    flex: 1.7;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.left {
+    flex: 1.7; 
+    text-align: center;
+}
+
+.right {
+    flex: 1.7; 
+    background-color: #73c232; 
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+
+p {
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 15px;
+    background-color:#dd6119;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width:60%;
+}
+
+button:hover {
+    background-color:  #058610; 
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        flex: 1 100%; /* Full width on small screens */
+    }
+}
+
+
+/* MAP STYLING */
+.map {
+    width: 100%;
+    height: 400px; /* Set the height of the map */
+    /* margin-top: 20px;  */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        flex: 1 100%; /* Full width on small screens */
+    }
+
+    .map {
+        height: 300px; /* Adjust map height for smaller screens */
+    }
+}
+
+
+/* QUESTION SESSION */
+.pink-section {
+    background-color: #0e3306;
+    padding: 8px;
+    border-radius: 8px;
+    max-width: 60%;
+    margin: 8px auto;
+    text-align: center;
+}
+
+.question-container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.question {
+    cursor: pointer;
+    color: whitesmoke;
+    /* display: flex; */
+    padding: 10px;
+    background-color: #13a12b;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    transition: background-color 0.3s;
+}
+
+.question:hover {
+    background-color: #dd4f17;
+    transform:translate(-5px, -10px); 
+ 
+}
+
+.answer {
+    display: none;
+    margin-top: 10px;
+    color: black;
+}
+
+.toggle-sign {
+    background-color: rgb(255, 115, 0); 
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6em;
+    margin-left: 10px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-sign:hover {
+    background-color: rgb(255, 94, 0); /* Darker orange on hover */
+}
+
+
+.divider {
+    border: 1px solid #ddd;
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .pink-section {
+        padding: 15px;
+    }
+
+    .question {
+        padding: 10px;
+    }
+
+    .answer {
+        font-size: 14px;
+    }
+}
+
+
+/* FOOTERRR */
+/* Footer */
+.footer {
+    background-color: #287c20;
+    color: #fff;
+    padding: 80px 0 40px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.footer-brand h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.footer h4 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #FFA500;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.footer-contact p {
+    margin-bottom: 15px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: #FFA500;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .farmers-grid {
+        gap: 20px;
+    }
+
+    .farmer-image-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .farmers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .newsletter-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-text {
+        margin-bottom: 20px;
+    }
+
+    .newsletter-form {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .farmers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand, .footer-links, .footer-contact, .footer-gallery {
+        text-align: center;
+    }
+    .footer-brand{
+        margin: auto;
+        width: 100%;
+    }
+    .footer h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-contact p {
+        justify-content: center;
+    }
+
+    .gallery-grid {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .farmers-section h2 {
+        font-size: 2rem;
+    }
+
+    .newsletter-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.organic-wrapper{
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-image: url(HFDHFHF.png);
+    background-size: cover;
+    background-position: center;
+}
+  
+  
+  
+  /* Content Box */
+  .organic-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Heading Styles */
+  .organic-heading {
+    font-size: 1.8rem; /* Slightly smaller */
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .organic-subheading {
+    font-size: 1.2rem; /* Smaller text */
+    margin: 0;
+  }
+  
+  /* Play Button */
+  .play-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Smaller play button */
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    animation: pulse 1.8s infinite;
+    position: relative;
+  }
+  
+  .play-icon {
+    width: 0;
+    height: 0;
+    border-left: 10px solid #27ae60;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+  }
+  
+  /* Play Button Animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+      transform: s;
+    }
+  }
+  
+
+
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <div class="custom-trail"></div>
+<nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="logooo.jpg" alt="Logo" class="logo-img">
+                <span class="logo-text"></span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="javascript:void(0);" onclick="navigateTo('Index.html')" class="nav-link">Home♟</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('Jah-aboutus.html')"class="nav-link">About♟</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('Jah-menu.html')"class="nav-link">Menu♟</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('Jah-signup.html')"class="nav-link">SignUp♟</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('Jah-login.html')"class="nav-link">Login♟</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('Jah-contact.html')"class="nav-link">Contact us♟</a></li>
+                 <!-- <li><a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a></li> 
+                -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- NAVBARS SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+
+    mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when a nav link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+
+</script>
+<!-- END OF THE NAVBAR SECTION -->
+
+
+
+    
+    </script>
+
+
+
+ <!-- New Section for Background Image and Text -->
+ <section class="contact-section">
+    <h1 class="contact-title">CONTACT US</h1>
+</section>
+
+
+<!-- MAIN AREA -->
+<div class="container">
+    <div class="left">
+        <h1 style="color:#dd6119;">Get in Touch!</h1>
+        <p style="color:#f0fff0"><b>We would love to hear from you. Please reach out with any questions or feedback.</b></p>
+        <img src="classic piperade.jpg" alt="Contact Image" class="contact-image">
+    </div>
+    <div class="right">
+        <h2>Contact Details</h2>
+        <p><strong>Email:</strong> jahbeldelice@gmail.com</p>
+        <p><strong>Phone1:</strong> +2347054375533</p>
+        <p><strong>Phone2:</strong> +2348088543549</p>
+        <p><strong>Address:</strong> Number 27 winnie street, jahbel towm, Port-Harcourt.</p>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<!-- SCRIPT FOR THE MAIN AREA --><script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Here you can add your form submission logic (e.g., AJAX request)
+    alert('Thank you for your message! We will get back to you soon.');
+    
+    // Optionally, reset the form
+    this.reset();
+});
+    </script>
+
+
+
+<!-- MAPPING -->
+<div id="map" class="map"></div> <!-- New div for the map -->
+
+
+
+<div style="background-color: white;"></div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Here you can add your form submission logic (e.g., AJAX request)
+    alert('Thank you for your message!.We will get back to you soon.👨🏾‍🍳');
+    
+    // Optionally, reset the form
+    this.reset();
+});
+</script>
+
+<!-- QUESTION SESSIION -->
+<div class="pink-section">
+    <h2 class="menu-title" style="text-decoration: underline; color: white; font-size:2rem;">◐FAQs◐</h2>
+    <div class="question-container">
+        <div class="question" onclick="toggleAnswer(0)">
+            <span style="font-size: 1.1rem;"><b>#What is  Jahbel's  return policy?</b></span>
+            <div class="answer" id="answer-0">✔You can return any item within a maximum of 24 hours of purchase, due to the fact that foods are biodegradeable.</div>
+            <span class="toggle-sign">+</span>
+        </div>
+        <hr class="divider">
+        <div class="question" onclick="toggleAnswer(1)">
+            <span style="font-size: 1.1rem;"><b>#Do you only sell food to french speakers/french lovers?</b></span>
+            <div class="answer" id="answer-1">✔Definetly not!Everyone is welcome too have a taste of our magic.</div>
+            <span class="toggle-sign">+</span>
+        </div>
+        <hr class="divider">
+        <div class="question" onclick="toggleAnswer(2)">
+            <span style="font-size: 1.1rem;"><b>#Do you ship  and deliver internationally?</b></span>
+            <div class="answer" id="answer-2">✔Yes, we ship to select countries worldwide.</div>
+            <span class="toggle-sign">+</span>
+        </div>
+        <hr class="divider">
+        <div class="question" onclick="toggleAnswer(3)">
+            <span><b>#Can I change my order?</b></span>
+            <div class="answer" id="answer-3">✔You can change your order within 24 hours of placing it.</div>
+            <span class="toggle-sign">+</span>
+        </div>
+        <hr class="divider">
+        <div class="question" onclick="toggleAnswer(4)">
+            <span style="font-size: 1.1rem;"><b>#What payment methods do you accept?</b></span>
+            <div class="answer" id="answer-4">✔We accept all major credit cards and PayPal.</div>
+            <span class="toggle-sign">+</span>
+        </div>
+        <hr class="divider">
+        <div class="question" onclick="toggleAnswer(5)">
+            <span style="font-size: 1.1rem;"><b>#How can I contact customer service?</b></span>
+            <div class="answer" id="answer-5">✔You can contact us via email or through our contact form.</div>
+            <span class="toggle-sign">+</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleAnswer(index) {
+    const answer = document.getElementById(`answer-${index}`);
+    if (answer.style.display === "block") {
+        answer.style.display = "none";
+    } else {
+        answer.style.display = "block";
+    }
+}
+</script>
+
+
+
+</body>
+
+
+
+<script>
+    const cursor = document.querySelector(".custom-cursor");
+    const trail = document.querySelector(".custom-trail");
+    
+    document.addEventListener("mousemove", (e) => {
+      // Updates cursor position
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    
+      // Updates trail position with a slight delay for a smooth trailing effect
+      setTimeout(() => {
+        trail.style.left = `${e.clientX}px`;
+        trail.style.top = `${e.clientY}px`;
+      }, 90);
+    });       
+    </script>
+
+    <!-- Include Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([37.7749, -122.4194], 12); // Example: San Francisco, CA
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add a marker at the location
+        const marker = L.marker([37.7749, -122.4194]).addTo(map);
+        marker.bindPopup('San Francisco, CA').openPopup();
+    </script>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logooo.jpg" alt="Ogenix Logo" class="footer-logo">
+                <p style="color:white">We're Providing Everyday Fresh and Quality Products</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#">♟About Company</a></li>
+                    <li><a href="#">♟Our Services</a></li>
+                    <li><a href="#">♟Become a Seller</a></li>
+                    <li><a href="#">♟New Products</a></li>
+                    <li><a href="#">♟Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p style="color:white"><i class="fas fa-map-marker-alt"></i>  No 20 winnnie street port harcourt</p>
+                <p style="color:white"><i class="fas fa-phone-alt"></i>+23454375533</p>
+                <p style="color:white"><i class="fas fa-envelope"></i> +2348088543549</p>
+            </div>
+
+            <div class="footer-gallery">
+                <h4>Gallery</h4>
+                <div class="gallery-grid">
+                    <img src="aesth1.jpg" alt="Fresh vegetables">
+                    <img src="aesth10.jpg" alt="Fresh fruits">
+                    <img src="aesth11.jpg" alt="Bread">
+                    <img src="aesth12.jpg" alt="Healthy breakfast">
+                    <img src="aesth13.jpg" alt="Prepared meal">
+                    <img src="aesth2.jpg" alt="Organic food">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>
